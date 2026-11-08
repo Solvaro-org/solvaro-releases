@@ -1,74 +1,31 @@
-# Solvaro releases
+# Solvaro Desktop — Releases
 
-Desktop installers for [Solvaro](https://Solvaroai.netlify.app).
+Official download location for the Solvaro desktop app (formerly **Arcus**).
 
-The public site is https://Solvaroai.netlify.app.
+## Download (current Latest: v1.5.2)
 
-The current desktop download is the unsigned Windows installer on **[1.4.2](https://github.com/Solvaro-org/Solvaro-releases/releases/tag/v1.4.2)**. Mac was not built. The July 9, 2026 files on **[v1.4.1](https://github.com/Solvaro-org/Solvaro-releases/releases/tag/v1.4.1)** are not the current app.
+| Platform | Version | Download |
+|---|---|---|
+| Windows x64 | 1.5.2 | [Solvaro-Setup-1.5.2.exe](https://github.com/Solvaro-org/solvaro-releases/releases/download/v1.5.2/Solvaro-Setup-1.5.2.exe) |
+| macOS Apple silicon | 1.4.2 (Arcus, older) | [Arcus-1.4.2-arm64.dmg](https://github.com/Solvaro-org/solvaro-releases/releases/download/v1.4.2/Arcus-1.4.2-arm64.dmg) |
+| macOS Intel | 1.4.2 (Arcus, older) | [Arcus-1.4.2.dmg](https://github.com/Solvaro-org/solvaro-releases/releases/download/v1.4.2/Arcus-1.4.2.dmg) |
+| Linux | 1.4.1 (Arcus, older) | [AppImage](https://github.com/Solvaro-org/solvaro-releases/releases/download/v1.4.1/Arcus-1.4.1.AppImage) · [.deb](https://github.com/Solvaro-org/solvaro-releases/releases/download/v1.4.1/arcus-desktop_1.4.1_amd64.deb) |
 
-## Public site
+All releases: [Solvaro-org/solvaro-releases releases](https://github.com/Solvaro-org/solvaro-releases/releases)
+Only the Windows build is on 1.5.x today; macOS and Linux 1.5.x builds have not been published yet.
 
-https://Solvaroai.netlify.app
+## Install
 
-Checked 2026-10-13 after the production deploy. The homepage is the investigation desk. The hero sentence is:
+### Windows
+The installer is currently **unsigned**, so Microsoft Defender SmartScreen may warn on first run.
+1. Download only from the link above (this repository). Do not run copies from other sources.
+2. If your browser flags the download, choose **Keep** (Edge: `...` → Keep → Show more → Keep anyway).
+3. When SmartScreen shows "Windows protected your PC", click **More info** → **Run anyway**.
 
-> Solvaro is the desktop investigation desk for support and solutions engineers.
+Proceed only if you trust the source. Do not disable SmartScreen, Defender, or other security features.
 
-The example on that page is a Spinnaker pipeline failure: “A Spinnaker pipeline failure, investigated in Solvaro.” The finding names `WaitForManifestStableTask` on Deploy Manifest.
+### macOS (1.4.2, unsigned, not notarized)
+Gatekeeper blocks a normal double-click. Right-click (Control-click) the app → **Open** → **Open**. Pick the arm64 DMG for Apple silicon, the other for Intel.
 
-That deploy is Netlify deploy `6aceb15d1c3f878fdb88ae7e` on the existing site `Solvaroai` (`1d53db9b-1ce2-475f-a0c2-8846ad918168`). The site is not connected to a Git repo, so production came from the Netlify CLI, not from a push to `main`.
-
-Site source: `Solvaro-core` branch `site/investigation-desk-intro` at `945c25c`. `Solvaro-core` `main` is still `e79c2f4` (2026-10-08).
-
-## Downloadable installers
-
-Current desktop: **[1.4.2](https://github.com/Solvaro-org/Solvaro-releases/releases/tag/v1.4.2)**, published 2026-10-13.
-
-| Platform | File | Published |
-| --- | --- | --- |
-| Windows x64 | [`Solvaro.Setup.1.4.2.exe`](https://github.com/Solvaro-org/Solvaro-releases/releases/download/v1.4.2/Solvaro.Setup.1.4.2.exe) | 2026-10-13 |
-
-The built NSIS file is `Solvaro Setup 1.4.2.exe` (160,822,834 bytes). GitHub stores that same file as `Solvaro.Setup.1.4.2.exe`. It is unsigned. There is no signing certificate. Windows SmartScreen will warn: choose **More info**, then **Run anyway**.
-
-Mac was not built. No `.dmg` is on 1.4.2. A Mac installer has to be built on a Mac.
-
-Linux was not built.
-
-This release does not include `latest.yml`, `latest-mac.yml`, `latest-linux.yml`, or a blockmap. GitHub `releases/latest` is this Windows installer only.
-
-The July 9, 2026 files are not the current app. They stay on **[v1.4.1](https://github.com/Solvaro-org/Solvaro-releases/releases/tag/v1.4.1)**:
-
-| Platform | File | Published |
-| --- | --- | --- |
-| Windows x64 | `Solvaro-Setup-1.4.1.exe` | 2026-07-09 |
-| macOS Apple silicon | `Solvaro-1.4.1-arm64.dmg` | 2026-07-09 |
-| macOS | `Solvaro-1.4.1.dmg` | 2026-07-09 |
-| Linux AppImage | `Solvaro-1.4.1.AppImage` | 2026-07-09 |
-| Linux deb | `Solvaro-desktop_1.4.1_amd64.deb` | 2026-07-09 |
-
-The July auto-update manifests (`latest.yml`, `latest-mac.yml`, `latest-linux.yml`) stay on that v1.4.1 release. They still describe the July apps.
-
-`Solvaro-core` `main` is still `e79c2f4` (2026-10-08). Desktop version `1.4.2` is commit `70913d2` on `site/investigation-desk-intro`. This installer was built on Windows from that local desktop checkout, including later uncommitted desktop work. It is not an `Solvaro-core` `main` build.
-
-## When a new installer is actually built
-
-Source repo: https://github.com/Solvaro-org/Solvaro-core
-
-`desktop/package.json` publish block:
-
-- provider: `github`
-- owner: `Solvaro-org`
-- repo: `Solvaro-releases`
-- releaseType: `release`
-
-Commands, from `desktop/` on a clean commit, after the version is bumped:
-
-- Windows: `npm run dist:win` with `CSC_IDENTITY_AUTO_DISCOVERY=false` and `win.signAndEditExecutable` set to `false`. This Windows account cannot create the winCodeSign symlinks, and there is no signing certificate.
-- macOS unsigned: `npm run dist:mac` (`CSC_IDENTITY_AUTO_DISCOVERY=false`, notarize skipped). This has to run on a Mac.
-- Linux: `npm run dist:linux`
-
-electron-builder uploads to this repo. Do not force-push `main`. Do not commit API keys or customer tokens.
-
-Production API the desk calls: `https://Solvaro-api-production-a4fc.up.railway.app` (`GET /health` returns `service: Solvaro`).
-
-The next installer should match the investigation desk on the site: Home, Investigate, History, Tickets; live transcript; local repo search; notes; Slack; Jira, Zendesk, ServiceNow, and Teams when that customer's app or token is saved; MCP in Settings; ticket updates only when a tracker is connected.
+## Auto-update
+The release notes for 1.5.0–1.5.2 say Windows installs check this repository's latest published release (`latest.yml`) and update to it. They also say 1.5.x keeps the Arcus app ID, so Arcus 1.4.x installs upgrade in place with their connectors and session kept. We have not tested this independently. Draft releases are not published, so they are not offered as updates.
