@@ -7,9 +7,9 @@ Official download location for the Solvaro desktop app (formerly **Arcus**).
 | Platform | Version | Download |
 |---|---|---|
 | Windows x64 | 1.5.2 | [Solvaro-Setup-1.5.2.exe](https://github.com/Solvaro-org/solvaro-releases/releases/download/v1.5.2/Solvaro-Setup-1.5.2.exe) |
-| macOS Apple silicon | 1.4.2 (Arcus, older) | [Arcus-1.4.2-arm64.dmg](https://github.com/Solvaro-org/solvaro-releases/releases/download/v1.4.2/Arcus-1.4.2-arm64.dmg) |
-| macOS Intel | 1.4.2 (Arcus, older) | [Arcus-1.4.2.dmg](https://github.com/Solvaro-org/solvaro-releases/releases/download/v1.4.2/Arcus-1.4.2.dmg) |
-| Linux | 1.4.1 (Arcus, older) | [AppImage](https://github.com/Solvaro-org/solvaro-releases/releases/download/v1.4.1/Arcus-1.4.1.AppImage) · [.deb](https://github.com/Solvaro-org/solvaro-releases/releases/download/v1.4.1/arcus-desktop_1.4.1_amd64.deb) |
+| macOS Apple silicon | 1.4.2 — legacy Arcus build (pre-rebrand; Solvaro Mac build coming) | [Arcus-1.4.2-arm64.dmg](https://github.com/Solvaro-org/solvaro-releases/releases/download/v1.4.2/Arcus-1.4.2-arm64.dmg) |
+| macOS Intel | 1.4.2 — legacy Arcus build (pre-rebrand; Solvaro Mac build coming) | [Arcus-1.4.2.dmg](https://github.com/Solvaro-org/solvaro-releases/releases/download/v1.4.2/Arcus-1.4.2.dmg) |
+| Linux | 1.4.1 — legacy Arcus build (pre-rebrand; Solvaro Linux build coming) | [AppImage](https://github.com/Solvaro-org/solvaro-releases/releases/download/v1.4.1/Arcus-1.4.1.AppImage) · [.deb](https://github.com/Solvaro-org/solvaro-releases/releases/download/v1.4.1/arcus-desktop_1.4.1_amd64.deb) |
 
 All releases: [Solvaro-org/solvaro-releases releases](https://github.com/Solvaro-org/solvaro-releases/releases)
 Only the Windows build is on 1.5.x today; macOS and Linux 1.5.x builds have not been published yet.
